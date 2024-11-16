@@ -36,6 +36,8 @@ body {
     height: 100%;
     position: relative;
     background: #000;
+    display: flex;
+    flex-direction: column;
 }
 
 .video-container video {
@@ -153,12 +155,17 @@ body {
 /* Keep existing video-info, user-info, and video-actions styles */
 .video-info {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     left: 0;
-    padding: 20px;
     width: 100%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.5) 20%,
+        rgba(0,0,0,0.9) 100%
+    );
     z-index: 100;
+    padding-top: 40px;
 }
 
 .user-info {
@@ -177,11 +184,11 @@ body {
 .video-actions {
     position: absolute;
     right: 16px;
-    bottom: 80px;
+    bottom: 60px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    z-index: 100;
+    z-index: 101;
 }
 
 .video-actions button {
@@ -226,11 +233,11 @@ body {
     }
 
     .video-info {
-        bottom: 70px;
+        bottom: 60px;
     }
 
     .video-actions {
-        bottom: 130px;
+        bottom: 120px;
         right: 12px;
     }
 }
@@ -238,10 +245,10 @@ body {
 /* Make text more readable */
 .video-description {
     margin-top: 8px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .user-info span {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     font-weight: 600;
 } 
