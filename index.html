@@ -9,24 +9,23 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar -->
-        <div class="sidebar">
+        <!-- Sidebar (desktop) -->
+        <div class="sidebar desktop-nav">
             <div class="logo">
                 <h1>Blud Tok</h1>
             </div>
             <nav>
-                <a href="#" class="active"><i class="fas fa-home"></i> For You</a>
-                <a href="#"><i class="fas fa-users"></i> Following</a>
-                <a href="#"><i class="fas fa-compass"></i> Discover</a>
-                <a href="#"><i class="fas fa-bell"></i> Notifications</a>
-                <a href="#"><i class="fas fa-user"></i> Profile</a>
+                <a href="#" class="active"><i class="fas fa-home"></i> <span>For You</span></a>
+                <a href="#"><i class="fas fa-users"></i> <span>Following</span></a>
+                <a href="#"><i class="fas fa-compass"></i> <span>Discover</span></a>
+                <a href="#"><i class="fas fa-bell"></i> <span>Notifications</span></a>
+                <a href="#"><i class="fas fa-user"></i> <span>Profile</span></a>
             </nav>
         </div>
 
         <!-- Main Content -->
         <div class="main-content">
             <div class="video-feed">
-                <!-- Video Container -->
                 <div class="video-container">
                     <video src="https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-sign-1232-large.mp4" loop></video>
                     <div class="video-info">
@@ -43,6 +42,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Bottom Navigation (mobile) -->
+        <div class="bottom-nav">
+            <nav>
+                <a href="#" class="active"><i class="fas fa-home"></i> <span>For You</span></a>
+                <a href="#"><i class="fas fa-users"></i> <span>Following</span></a>
+                <a href="#"><i class="fas fa-compass"></i> <span>Discover</span></a>
+                <a href="#"><i class="fas fa-bell"></i> <span>Notifications</span></a>
+                <a href="#"><i class="fas fa-user"></i> <span>Profile</span></a>
+            </nav>
         </div>
     </div>
     <script src="script.js"></script>

@@ -13,6 +13,7 @@ body {
 .app-container {
     display: flex;
     height: 100vh;
+    position: relative;
 }
 
 /* Sidebar Styles */
@@ -35,7 +36,8 @@ body {
     gap: 20px;
 }
 
-.sidebar nav a {
+.sidebar nav a,
+.bottom-nav nav a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
@@ -47,7 +49,9 @@ body {
 }
 
 .sidebar nav a:hover,
-.sidebar nav a.active {
+.sidebar nav a.active,
+.bottom-nav nav a:hover,
+.bottom-nav nav a.active {
     background-color: #333;
 }
 
@@ -55,12 +59,14 @@ body {
 .main-content {
     flex: 1;
     overflow-y: auto;
+    height: 100vh;
 }
 
 .video-feed {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    height: 100%;
 }
 
 .video-container {
@@ -68,14 +74,34 @@ body {
     margin-bottom: 20px;
     border-radius: 8px;
     overflow: hidden;
+    height: calc(100vh - 40px);
 }
 
 .video-container video {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
+/* Bottom Navigation (Mobile) */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    border-top: 1px solid #333;
+    padding: 10px;
+}
+
+.bottom-nav nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Keep existing video-info, user-info, and video-actions styles */
 .video-info {
     position: absolute;
     bottom: 80px;
@@ -124,20 +150,35 @@ body {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 60px;
-        padding: 10px;
-    }
-
-    .logo h1 {
+    .desktop-nav {
         display: none;
     }
 
-    .sidebar nav a span {
-        display: none;
+    .bottom-nav {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+        padding-bottom: 60px; /* Space for bottom nav */
     }
 
     .video-feed {
-        padding: 10px;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .video-container {
+        border-radius: 0;
+        margin-bottom: 0;
+        height: calc(100vh - 60px);
+    }
+
+    .video-info {
+        bottom: 120px;
+    }
+
+    .video-actions {
+        bottom: 140px;
     }
 } 
